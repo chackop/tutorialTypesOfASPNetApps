@@ -35,7 +35,9 @@ namespace MVCApplication.Controllers
         // GET: Course/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var course = db.Courses.Where(c => c.Id == id).SingleOrDefault();
+
+            return View(course);
         }
 
         // GET: Course/Create
